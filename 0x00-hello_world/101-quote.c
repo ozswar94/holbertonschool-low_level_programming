@@ -5,12 +5,15 @@
 *
 * @str: The string which will be display
 */
-void print(char *str)
+void print(char str[])
 {
-	while (*str)
+	unsigned int i;
+
+	i = 0;
+	while (str[i])
 	{
-		write(1, str, 1);
-		str++;
+		write(1, &str[i], 1);
+		i++;
 	}
 }
 
