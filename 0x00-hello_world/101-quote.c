@@ -5,15 +5,12 @@
 *
 * @str: The string which will be display
 */
-void print(char str[])
+void print(char *str)
 {
-	unsigned int i;
-
-	i = 0;
-	while (str[i])
+	while (*str)
 	{
-		write(1, &str[i], 1);
-		i++;
+		write(1, str, 1);
+		str++;
 	}
 }
 
@@ -28,6 +25,6 @@ int main(void)
 	char str[] = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 
 	print(str);
-	return (0);
+	return (1);
 }
 
