@@ -9,7 +9,7 @@ int main(void)
 	int num1;
 	int num2;
 
-	num1 = 0;
+	num1 = 1;
 	num2 = 0;
 	while (num1 + '0' <= '8')
 	{
