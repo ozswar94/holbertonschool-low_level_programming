@@ -6,16 +6,17 @@
 */
 int main(void)
 {
-	unsigned char c;
+	int nb;
 
-	c = '0';
-	while (c <= '9')
+	nb = '0';
+	while (nb <= '9')
 	{
-		putchar(c++);
-		if (c <= '9')
+		putchar(nb++);
+		if (nb <= '9')
+		{
 			putchar(',');
-		else
 			putchar(' ');
+		}
 	}
 	putchar('\n');
 	return (0);
