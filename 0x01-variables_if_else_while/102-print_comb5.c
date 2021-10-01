@@ -15,8 +15,8 @@ int main(void)
 		{
 			if (nb1 > nb2)
 			{
-				putchar((nb1 / 10 ) + '0');
-				putchar((nb1 % 10 ) + '0');
+				putchar((nb1 / 10) + '0');
+				putchar((nb1 % 10) + '0');
 				putchar(' ');
 				putchar((nb2 / 10) + '0');
 				putchar((nb2 % 10) + '0');
