@@ -13,7 +13,7 @@ int main(void)
 	{
 		for (nb2 = 0; nb2 < 100; nb2++)
 		{
-			if (nb1 > nb2)
+			if (nb1 < nb2)
 			{
 				putchar((nb1 / 10) + '0');
 				putchar((nb1 % 10) + '0');
