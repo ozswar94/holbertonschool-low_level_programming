@@ -9,8 +9,8 @@ int main(void)
 	int num1;
 	int num2;
 
-	num1 = 1;
-	num2 = 0;
+	num1 = 0;
+	num2 = 1;
 	while (num1 + '0' <= '8')
 	{
 		while (num2 + '0' <= '9')
