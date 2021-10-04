@@ -1,2 +1,5 @@
 # main file
 *-main.c
+
+# file putchar
+_putchar.c
