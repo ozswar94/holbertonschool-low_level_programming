@@ -13,13 +13,17 @@ int main(void)
 
 	for (i = 0; i < 3; i++)
 		fib[i] = 1;
-	printf("%d\n", 1);
-	for (i = 1; i < LIMIT; i++)
+	for (i = 0; i < LIMIT; i++)
 	{
-		printf("%ld\n", fib[0]);
-		fib[0] = fib[0] + fib[1];
-		fib[1] = fib[2];
-		fib[2] = fib[0];
+		if (i != LIMIT - 1)
+		{
+			printf("%ld,", fib[0]);
+			fib[0] = fib[0] + fib[1];
+			fib[1] = fib[2];
+			fib[2] = fib[0];
+		}
+		else
+			printf("%ld\n", fib[0]);
 	}
 	return (0);
 }
