@@ -37,6 +37,8 @@ void jack_bauer(void)
 		{
 			h_0++;
 			h_1 = 0;
+			m_0 = 0;
+			m_1 = 0;
 		}
 		else
 		{
