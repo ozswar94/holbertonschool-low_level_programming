@@ -92,7 +92,7 @@ int main(void)
 	result = 0;
 	for (i = 0; i < LIMIT; i++)
 	{
-		if (i % 3 == 0 || i % 5)
+		if ((i % 3 == 0) || (i % 5 == 0))
 			result += i;
 	}
 	_print_nbr(result);
