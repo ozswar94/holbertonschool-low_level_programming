@@ -13,9 +13,9 @@ int main(void)
 
 	for (i = 0; i < 3; i++)
 		fib[i] = 1;
-	for (i = 0; i < LIMIT; i++)
+	for (i = 0; i <= LIMIT; i++)
 	{
-		if (i != LIMIT - 1)
+		if (i != LIMIT)
 		{
 			printf("%lu, ", fib[0]);
 			fib[0] = fib[0] + fib[1];
