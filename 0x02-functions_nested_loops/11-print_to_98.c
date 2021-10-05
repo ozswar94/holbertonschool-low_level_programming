@@ -1,5 +1,22 @@
 #include "main.h"
 #define LIMIT 98
+#include <stdio.h>
+
+/**
+* _strlen - size of str
+* @str: the string
+* Return: the size str
+*/
+size_t _strlen(char *str)
+{
+	size_t i;
+
+	i = 0;
+	while (str[i])
+	i++;
+	return (i);
+}
+
 /**
 * print_rev - print a str reverse
 * @str: the string
@@ -9,9 +26,7 @@ void print_rev(char *str)
 {
 	int i;
 
-	i = 0;
-	while (str[i])
-		i++;
+	i = _strlen(str) - 1;
 	while (i >= 0)
 	{
 		_putchar(str[i]);
@@ -37,7 +52,7 @@ int _abs(int n)
 */
 void _print_nbr(int n)
 {
-	int i;
+	size_t i;
 	int mul_10;
 	long number;
 	char nb[16];
