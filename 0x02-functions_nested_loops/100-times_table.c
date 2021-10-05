@@ -1,5 +1,4 @@
 #include "main.h"
-#define LIMIT 98
 
 /**
 * _strlen - size of str
@@ -82,44 +81,50 @@ void _print_nbr(int n)
 }
 
 /**
-* print_to_98 - print every number up to 98
+* print_times_table - print n table of multiplication
 * @n: the number
 * Return: nothing (void)
 */
-void print_to_98(int n)
+void print_times_table(int n)
 {
-	if (n == 98)
-	{
-		_print_nbr(n);
-		_putchar('\n');
+	int i;
+	int j;
+
+	if (n == 0 || n > 15)
 		return;
-	}
-	if (n != LIMIT)
+	for (i = 0; i <= n; i++)
 	{
-		if (n < LIMIT)
+		for (j = 0; j <= 9; j++)
 		{
-			for (; n <= LIMIT; n++)
+			_print_nbr(i * j);
+			if ((i * j) < 10)
 			{
-				_print_nbr(n);
-				if (n != LIMIT)
+				if (j != 9)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+					_putchar(' ');
+				}
+			}
+			else if ((i * j) < 100)
+			{
+				if (j != 9)
+				{
+					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
+				}
+			}
+			else
+			{
+				if (j != 9)
 				{
 					_putchar(',');
 					_putchar(' ');
 				}
 			}
 		}
-		else
-		{
-			for (; n >= LIMIT; n--)
-			{
-				_print_nbr(n);
-				if (n != LIMIT)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
-			}
-		}
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
