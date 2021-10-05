@@ -17,7 +17,7 @@ int main(void)
 	{
 		if (i != LIMIT - 1)
 		{
-			printf("%ld,", fib[0]);
+			printf("%ld, ", fib[0]);
 			fib[0] = fib[0] + fib[1];
 			fib[1] = fib[2];
 			fib[2] = fib[0];
