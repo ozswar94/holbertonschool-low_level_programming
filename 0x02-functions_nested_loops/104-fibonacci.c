@@ -18,12 +18,13 @@ int main(void)
 		if (i != LIMIT)
 		{
 			printf("%lu, ", fib[0]);
-			fib[0] = fib[0] + fib[1];
-			fib[1] = fib[2];
-			fib[2] = fib[0];
+
 		}
 		else
 			printf("%lu\n", fib[0]);
+		fib[0] = fib[0] + fib[1];
+		fib[1] = fib[2];
+		fib[2] = fib[0];
 	}
 	return (0);
 }
