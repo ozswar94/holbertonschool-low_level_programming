@@ -90,41 +90,37 @@ void print_times_table(int n)
 	int i;
 	int j;
 
-	if (n == 0 || n > 15)
+	if (n < 0 || n > 15)
 		return;
-	for (i = 0; i <= n; i++)
+	for (i = 0; i < n; i++)
 	{
-		for (j = 0; j <= 9; j++)
+		for (j = 0; j < 10; j++)
 		{
-			_print_nbr(i * j);
-			if ((i * j) < 10)
+			if (j == 0)
+				_putchar('0');
+			else if ((i * j) < 10)
 			{
-				if (j != 9)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(' ');
-				}
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(' ');
+				_print_nbr(i * j);
 			}
 			else if ((i * j) < 100)
 			{
-				if (j != 9)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-				}
+				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_print_nbr(i * j);
 			}
 			else
 			{
-				if (j != 9)
-				{
-					_putchar(',');
-					_putchar(' ');
-				}
+				_putchar(',');
+				_putchar(' ');
+				_print_nbr(i * j);
 			}
 		}
 		_putchar('\n');
 	}
 }
+
