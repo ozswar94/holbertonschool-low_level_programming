@@ -7,12 +7,16 @@
 */
 int main(void)
 {
-	unsigned long i;
-	unsigned long prime_f;
+	unsigned long div;
+	unsigned long num = FACT_N;
 
-	prime_f = 1;
-	for (i = 1; prime_f <= FACT_N; i++)
-		prime_f *= i;
-	printf("%lu\n", prime_f);
+	div = 2;
+	while (num != div)
+	{
+		while (num % div == 0)
+			num = num / div
+		div++;
+	}
+	printf("%d\n", div);
 	return (0);
 }
