@@ -14,9 +14,9 @@ int main(void)
 	while (num != div)
 	{
 		while (num % div == 0)
-			num = num / div
+			num = num / div;
 		div++;
 	}
-	printf("%d\n", div);
+	printf("%ld\n", div);
 	return (0);
 }
