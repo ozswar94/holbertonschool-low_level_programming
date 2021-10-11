@@ -1,4 +1,7 @@
 #include "main.h"
+#include <stdio.h>
+
+#include "main.h"
 
 /**
 * _strlen - determine se sizeof ol string
@@ -12,9 +15,10 @@ int _strlen(char *s)
 
 	i = 0;
 	while (s[i])
-	i++;
+		i++;
 	return (i);
 }
+
 
 /**
 * rev_string - reverse string
@@ -26,14 +30,26 @@ void rev_string(char *s)
 {
 	int i;
 	int j;
-	char tmp;
+	char *tmp;
 
-	i = _strlen(s) - 1;
-	for (j = 0; j != i; j++)
+	tmp = (char *)malloc(sizeof(char) * _strlen(s));
+	if (tmp == NULL)
+		return;
+	i = 0;
+	while (s[i])
 	{
-		tmp = s[i];
-		s[i--] = s[j];
-		s[j] = tmp;
+		tmp[i] = s[i];
+		i++;
 	}
+	j = 0;
+	i--;
+	while ((i != j) && s[j])
+	{
+		s[j] = tmp[i];
+		i--;
+		j++;
+	}
+	free(tmp);
+	tmp = NULL;
 }
 
