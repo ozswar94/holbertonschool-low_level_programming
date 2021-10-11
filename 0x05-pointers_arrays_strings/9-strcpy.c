@@ -8,10 +8,10 @@
 * Return: value of dest
 */
 
-char *_strcpy (char *dest, char *src)
+char *_strcpy(char *dest, char *src)
 {
 	int i;
-	
+
 	i = 0;
 	while (src[i])
 	{
