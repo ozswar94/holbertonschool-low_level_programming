@@ -43,7 +43,7 @@ void rev_string(char *s)
 	}
 	j = 0;
 	i--;
-	while ((i != j) && s[j])
+	while (s[j])
 	{
 		s[j] = tmp[i];
 		i--;
