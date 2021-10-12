@@ -30,26 +30,19 @@ void rev_string(char *s)
 {
 	int i;
 	int j;
-	char *tmp;
+	char c;
 
-	tmp = (char *)malloc(sizeof(char) * _strlen(s));
-	if (tmp == NULL)
+	if (_strlen(s) == 0)
 		return;
-	i = 0;
-	while (s[i])
-	{
-		tmp[i] = s[i];
-		i++;
-	}
+	i = _strlen(s) - 1;
 	j = 0;
-	i--;
-	while (s[j])
+	while (s[i] && j <= (_strlen(s) -1) / 2)
 	{
-		s[j] = tmp[i];
-		i--;
+		c = s[i];
+		s[i] = s[j];
+		s[j] = c;
 		j++;
+		i--;
 	}
-	free(tmp);
-	tmp = NULL;
 }
 
