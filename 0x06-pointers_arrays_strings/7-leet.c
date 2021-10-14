@@ -13,7 +13,8 @@ char *leet(char *str)
 	char *encode = "43071";
 	char *decode = "aAeEoOtTlL";
 
-	i = k = 0;
+	i = 0;
+	k = 0;
 	while (encode[i])
 	{
 		j = 0;
