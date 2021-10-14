@@ -1,13 +1,20 @@
-#include "main.h"
-
 /**
-* print_number - print the number at 0 to 9
+* print_number - print number in output
+*
+* @n: integer
+* Return: nothing
 */
-void print_number(void)
+void print_number(int n)
 {
-	char i;
+	unsigned int n_1;
 
-	for (i = 0; i < 10; i++)
-		_putchar(i + '0');
-	_putchar('\n');
+	if (n < 0)
+	{
+		n *= -1;
+		_putchar('-');
+	}
+	n_1 = n;
+	if (n_1 / 10)
+		print_number(n_1 / 10);
+	_putchar((n_1 % 10) + '0');
 }
