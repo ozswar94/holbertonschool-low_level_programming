@@ -8,19 +8,23 @@
 char *leet(char *str)
 {
 	int i;
+	int j;
+	int k;
+	char *encode = "43071";
+	char *decode = "aAeEoOtTlL";
 
-	for (i = 0; str[i]; i++)
+	i = k = 0;
+	while (encode[i])
 	{
-		if (str[i] == 'a' || str[i] == 'A')
-			str[i] = '4';
-		else if (str[i] == 'e' || str[i] == 'E')
-			str[i] = '3';
-		else if (str[i] == 'o' || str[i] == 'O')
-			str[i] = '0';
-		else if (str[i] == 't' || str[i] == 'T')
-			str[i] = '7';
-		else if (str[i] == 'l' || str[i] == 'L')
-			str[i] = '1';
+		j = 0;
+		while (str[j])
+		{
+			if (str[j] == decode[i] || str[j] == decode[i + 1])
+				str[j] = encode[k];
+			j++;
+		}
+		i += 2;
+		k++;
 	}
 	return (str);
 }
