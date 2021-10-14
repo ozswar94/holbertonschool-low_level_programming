@@ -9,22 +9,20 @@ char *leet(char *str)
 {
 	int i;
 	int j;
-	int k;
 	char *encode = "43071";
-	char *decode = "aAeEoOtTlL";
+	char *decode = "AEOTL";
 
-	i = k = 0;
+	i = 0;
 	while (encode[i])
 	{
 		j = 0;
 		while (str[j])
 		{
-			if (str[j] == decode[i] || str[j] == decode[i + 1])
-				str[j] = encode[k];
+			if (str[j] == decode[i] || str[j] == decode[i] + 32)
+				str[j] = encode[i];
 			j++;
 		}
-		i += 2;
-		k++;
+		i++;
 	}
 	return (str);
 }
