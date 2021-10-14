@@ -1,3 +1,4 @@
+#include "main.h"
 /**
 * print_number - print number in output
 *
