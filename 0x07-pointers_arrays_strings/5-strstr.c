@@ -18,8 +18,8 @@ int _strlen(char *s)
 
 /**
 * _strstr - search a string for any of a set of bytes
-* @h: string
-* @accept: char allow
+* @haystack: string
+* @needle: search string
 * Return: adress of the first occurence
 */
 char *_strstr(char *haystack, char *needle)
