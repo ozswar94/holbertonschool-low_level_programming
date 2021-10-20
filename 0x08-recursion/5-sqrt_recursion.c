@@ -13,13 +13,13 @@ int _sqrt(int base, int x)
 		return (x);
 	if (x * x > base)
 		return (-1);
-	return _sqrt(base, x + 1);
+	return (_sqrt(base, x + 1));
 
 }
 
 /**
 * _sqrt_recursion - These functions return the nonnegative square root of x
-* @n: 
+* @n: int
 * Return: On success, these functions return the square root of x.
 */
 int _sqrt_recursion(int n)
