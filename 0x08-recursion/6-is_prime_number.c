@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
-* prime - check if n is prime
+* _prime - check if n is prime
 * @n: int
+* @p: int
 * Return: 1 if is prime 0 if not
 */
 int _prime(int n, int p)
