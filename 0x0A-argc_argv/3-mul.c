@@ -9,11 +9,18 @@
 */
 int main(int argc, char **argv)
 {
-	if (argc == 1 || argc > 3)
+	int mul1;
+	int mul2;
+	int result;
+
+	if (argc != 3)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
+	mul1 = atoi(argv[1]);
+	mul2 = atoi(argv[2]);
+	result = mul1 * mul2;
+	printf("%d\n", result);
 	return (0);
 }
