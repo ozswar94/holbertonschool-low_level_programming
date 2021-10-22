@@ -18,18 +18,14 @@
 int main(int argc, char **argv)
 {
 	int cents = 0;
-	int change = atoi(argv[2]);
+	int change;
 
 	if (argc != 2)
 	{
 		puts("Error");
 		return (1);
 	}
-	if (change <= 0)
-	{
-		puts("0");
-		return (0);
-	}
+	change = atoi(argv[1]);
 	while (change - CENT_25 >= 0)
 	{
 		change -= CENT_25;
@@ -55,6 +51,7 @@ int main(int argc, char **argv)
 		change -= CENT_1;
 		cents++;
 	}
+	cents = (cents <= 0) ? 0 : cents;
 	printf("%d\n", cents);
 	return (0);
 }
