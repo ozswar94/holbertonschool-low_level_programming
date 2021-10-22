@@ -29,31 +29,19 @@ int main(int argc, char **argv)
 	while (change)
 	{
 		if (change % CENT_25 == 0)
-		{
 			change -= CENT_25;
-			result++;
-		}
 		else if (change % CENT_10 == 0)
-		{
 			change -= CENT_10;
-			result++;
-		}
 		else if (change % CENT_5 == 0)
-		{
 			change -= CENT_5;
-			result++;
-		}
 		else if (change % CENT_2 == 0)
-		{
 			change -= CENT_2;
-			result++;
-		}
 		else if (change % CENT_1 == 0)
-		{
 			change -= CENT_1;
-			result++;
-		}
+		result++;
 	}
-	printf("%d\n", result);
+	if (result > 0)
+		printf("%d", result);
+	putchar('\n');
 	return (0);
 }
