@@ -17,43 +17,43 @@
 
 int main(int argc, char **argv)
 {
-	int cents;
-	int change;
+	int cents = 0;
+	int change = atoi(argv[2]);
 
 	if (argc != 2)
 	{
 		puts("Error");
 		return (1);
 	}
-	cents = 0;
-	change = atoi(argv[1]);
-	while (change)
+	if (change <= 0)
 	{
-		while (change - CENT_25 >= 0)
-		{
-			change -= CENT_25;
-			cents++;
-		}
-		while (change - CENT_10 >= 0)
-		{
-			change -= CENT_10;
-			cents++;
-		}
-		while (change - CENT_5 >= 0)
-		{
-			change -= CENT_5;
-			cents++;
-		}
-		while (change - CENT_2 >= 0)
-		{
-			change -= CENT_2;
-			cents++;
-		}
-		while (change - CENT_1 >= 0)
-		{
-			change -= CENT_1;
-			cents++;
-		}
+		puts("0");
+		return (0);
+	}
+	while (change - CENT_25 >= 0)
+	{
+		change -= CENT_25;
+		cents++;
+	}
+	while (change - CENT_10 >= 0)
+	{
+		change -= CENT_10;
+		cents++;
+	}
+	while (change - CENT_5 >= 0)
+	{
+		change -= CENT_5;
+		cents++;
+	}
+	while (change - CENT_2 >= 0)
+	{
+		change -= CENT_2;
+		cents++;
+	}
+	while (change - CENT_1 >= 0)
+	{
+		change -= CENT_1;
+		cents++;
 	}
 	printf("%d\n", cents);
 	return (0);
