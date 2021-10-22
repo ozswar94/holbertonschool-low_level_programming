@@ -16,7 +16,7 @@
 */
 int main(int argc, char **argv)
 {
-	int result;
+	int cents;
 	int change;
 
 	if (argc == 1 || argc > 2)
@@ -24,8 +24,13 @@ int main(int argc, char **argv)
 		puts("Error");
 		return (1);
 	}
-	result = 0;
+	cents = 0;
 	change = atoi(argv[1]);
+	if (change == 0)
+	{
+		puts("0");
+		return (0);
+	}
 	while (change)
 	{
 		if (change % CENT_25 == 0)
@@ -38,10 +43,8 @@ int main(int argc, char **argv)
 			change -= CENT_2;
 		else if (change % CENT_1 == 0)
 			change -= CENT_1;
-		result++;
+		cents++;
 	}
-	if (result > 0)
-		printf("%d", result);
-	putchar('\n');
+	printf("%d\n", cents);
 	return (0);
 }
