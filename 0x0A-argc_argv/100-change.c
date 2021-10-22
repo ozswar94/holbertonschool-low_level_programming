@@ -14,36 +14,46 @@
 * @argv: argument + name of program
 * Return: 0 (sucess)
 */
+
 int main(int argc, char **argv)
 {
 	int cents;
 	int change;
 
-	if (argc == 1 || argc > 2)
+	if (argc != 2)
 	{
 		puts("Error");
 		return (1);
 	}
 	cents = 0;
 	change = atoi(argv[1]);
-	if (change == 0)
-	{
-		puts("0");
-		return (0);
-	}
 	while (change)
 	{
-		if (change % CENT_25 == 0)
+		while (change - CENT_25 >= 0)
+		{
 			change -= CENT_25;
-		else if (change % CENT_10 == 0)
+			cents++;
+		}
+		while (change - CENT_10 >= 0)
+		{
 			change -= CENT_10;
-		else if (change % CENT_5 == 0)
+			cents++;
+		}
+		while (change - CENT_5 >= 0)
+		{
 			change -= CENT_5;
-		else if (change % CENT_2 == 0)
+			cents++;
+		}
+		while (change - CENT_2 >= 0)
+		{
 			change -= CENT_2;
-		else if (change % CENT_1 == 0)
+			cents++;
+		}
+		while (change - CENT_1 >= 0)
+		{
 			change -= CENT_1;
-		cents++;
+			cents++;
+		}
 	}
 	printf("%d\n", cents);
 	return (0);
