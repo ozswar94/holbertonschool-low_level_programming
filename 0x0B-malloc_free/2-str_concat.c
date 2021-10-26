@@ -1,6 +1,12 @@
 #include "main.h"
 #include <stdio.h>
 
+/**
+* _strlen - determine se sizeof ol string
+* @s: string
+* Return: the size of str
+*/
+
 unsigned int _strlen(char *s)
 {
 	unsigned int i = 0;
