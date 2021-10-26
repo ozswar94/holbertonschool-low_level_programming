@@ -25,14 +25,14 @@ unsigned int _strlen(char *s)
 char **strtow(char *str)
 {
 	unsigned int i, j, k;
-	int word = 0;
+	unsigned int word = 0;
 	char **tab_word;
 
-	if (str == NULL || _strlen(str) == 0 || _strlen(str) == 1)
-		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 		if (str[i] == ' ')
 			word++;
+	if (str == NULL || _strlen(str) == 0 || i == word)
+		return (NULL);
 	tab_word = (char **)malloc(sizeof(char *) * word + 1);
 	if (tab_word == NULL)
 		return (NULL);
