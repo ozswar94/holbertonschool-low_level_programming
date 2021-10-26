@@ -18,20 +18,28 @@ char *str_concat(char *s1, char *s2)
 
 	for (size_s1 = 0; s1[size_s1] != '\0'; size_s1++)
 	;
-	for (size_s2 = 0; s1[size_s2] != '\0'; size_s2++)
+	for (size_s2 = 0; s2[size_s2] != '\0'; size_s2++)
 	;
 	size_concat = size_s1 + size_s2;
 
-	concat = (char *)malloc(sizeof(char) * size_concat + 1);
-	if (!concat || !s1 || !s2)
+	concat = (char *)malloc(sizeof(char) * size_concat);
+	if (concat == NULL || s1 == NULL || s2 == NULL)
 		return (NULL);
 
-	for (i = 0; i < size_s1; i++)
-		concat[i] = s1[i];
-	for (j = 0; j <= size_s2; j++)
+	i = 0;
+	j = 0;
+	while (i + j < size_concat)
 	{
-		concat[i] = s2[j];
-		i++;
+		if (i < size_s1)
+		{
+			concat[i + j] = s1[i];
+			i++;
+		}
+		else
+		{
+			concat[i + j] = s2[j];
+			j++;
+		}
 	}
 	return (concat);
 }
