@@ -28,7 +28,7 @@ char **strtow(char *str)
 	int word = 0;
 	char **tab_word;
 
-	if (str == NULL || _strlen(str) == 0 || strlen(str) == 1)
+	if (str == NULL || _strlen(str) == 0 || _strlen(str) == 1)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 		if (str[i] == ' ')
@@ -62,7 +62,6 @@ char **strtow(char *str)
 		k++;
 		i += j;
 	}
-	if 
 	tab_word[k] = NULL;
 	return (tab_word);
 }
