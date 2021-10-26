@@ -28,18 +28,17 @@ char **strtow(char *str)
 	int word = 0;
 	char **tab_word;
 
-	if (str == NULL || _strlen(str) == 0)
+	if (str == NULL || _strlen(str) == 0 || (_strlen(str) == 1 && str[0] == ' '))
 		return (NULL);
-
 	for (i = 0; str[i] != '\0'; i++)
 		if (str[i] == ' ')
 			word++;
 	tab_word = (char **)malloc(sizeof(char *) * word + 1);
 	if (tab_word == NULL)
 		return (NULL);
-
 	k = 0;
-	for (i = 0; str[i] != '\0' && i < _strlen(str); i++)
+	i = 0;
+	while (str[i] != '\0' && i < _strlen(str))
 	{
 		j = 0;
 		while (str[i + j] != ' ' && str[i + j])
@@ -57,7 +56,6 @@ char **strtow(char *str)
 			free(tab_word);
 			return (NULL);
 		}
-
 		for (j = 0; str[i + j] != ' ' && str[i + j]; j++)
 			tab_word[k][j] = str[i + j];
 		tab_word[k][j] = '\0';
