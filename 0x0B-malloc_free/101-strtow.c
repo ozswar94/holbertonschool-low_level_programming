@@ -24,7 +24,7 @@ unsigned int _strlen(char *s)
 
 char **strtow(char *str)
 {
-	int i, j, k;
+	unsigned int i, j, k;
 	int word = 0;
 	char **tab_word;
 
@@ -39,14 +39,16 @@ char **strtow(char *str)
 		return (NULL);
 
 	k = 0;
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0' && i < _strlen(str); i++)
 	{
 		j = 0;
 		while (str[i + j] != ' ' && str[i + j])
 			j++;
 		if (j == 0)
+		{
+			i++;
 			continue;
-
+		}
 		tab_word[k] = (char *)malloc(sizeof(char) * j + 1);
 		if (tab_word[k] == NULL)
 		{
