@@ -33,7 +33,7 @@ char **strtow(char *str)
 			word++;
 	if (str == NULL || _strlen(str) == 0 || i == word)
 		return (NULL);
-	tab_word = (char **)malloc(sizeof(char *) * word + 1);
+	tab_word = (char **)malloc(sizeof(char *) * word + 2);
 	if (tab_word == NULL)
 		return (NULL);
 	k = 0;
