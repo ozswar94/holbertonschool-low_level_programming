@@ -3,7 +3,7 @@
 /**
 * _strlen - determine se sizeof ol string
 * @s: string
-* Return: the size of str
+* Return: the size of s
 */
 
 unsigned int _strlen(char *s)
