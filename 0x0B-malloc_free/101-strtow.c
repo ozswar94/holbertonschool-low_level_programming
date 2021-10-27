@@ -41,26 +41,28 @@ char **strtow(char *str)
 	while (str[i] != '\0' && i < _strlen(str))
 	{
 		j = 0;
-		while (str[i + j] != ' ' && str[i + j])
+		while (str[i + j] && str[i + j] != ' ')
 			j++;
 		if (j == 0)
 		{
 			i++;
-			continue;
 		}
-		tab_word[k] = (char *)malloc(sizeof(char) * j + 1);
-		if (tab_word[k] == NULL)
+		else
 		{
-			for (j = 0; j < k; j++)
-				free(tab_word[j]);
-			free(tab_word);
-			return (NULL);
+			tab_word[k] = (char *)malloc(sizeof(char) * j + 1);
+			if (tab_word[k] == NULL)
+			{
+				for (j = 0; j < k; j++)
+					free(tab_word[j]);
+				free(tab_word);
+				return (NULL);
+			}
+			for (j = 0; str[i + j] && str[i + j] != ' '; j++)
+				tab_word[k][j] = str[i + j];
+			tab_word[k][j] = '\0';
+			k++;
+			i += j;
 		}
-		for (j = 0; str[i + j] != ' ' && str[i + j]; j++)
-			tab_word[k][j] = str[i + j];
-		tab_word[k][j] = '\0';
-		k++;
-		i += j;
 	}
 	tab_word[k] = NULL;
 	return (tab_word);
