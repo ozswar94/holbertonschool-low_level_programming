@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
-* str_concat - concat two string and return in new string
-* @s1: string
-* @s2: string
-* Return: concat string
+* _calloc - concat two string and return in new string
+* @nmemb: number of element
+* @size: size of element
+* Return: ptr alloc
 */
 
 void *_calloc(unsigned int nmemb, unsigned int size)

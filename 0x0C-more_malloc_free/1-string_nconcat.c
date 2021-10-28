@@ -16,9 +16,10 @@ unsigned int _strlen(char *s)
 }
 
 /**
-* str_concat - concat two string and return in new string
+* string_nconcat - concat two string and return in new string
 * @s1: string
 * @s2: string
+* @n: n char concat
 * Return: concat string
 */
 
