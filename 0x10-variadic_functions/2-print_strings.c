@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
-* print_numbers - print argument int
+* print_strings - print argument string
 * @separator: string separator
 * @n: number of arguement
 *
