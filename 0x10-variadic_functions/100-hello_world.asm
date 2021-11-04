@@ -1,8 +1,9 @@
-			global	main
+		global	main
 
-			section	.text
+		section	.text
 
-main 		mov	rax, 1
+main:
+			mov	rax, 1
 			mov	rdi, 1
 			mov	rsi, message
 			mov	rdx, 13
@@ -12,4 +13,5 @@ main 		mov	rax, 1
 			syscall
 
 			section	.data
-message	db	"Hello, World", 0xa
+message:	
+			db	"Hello, World", 0xa
