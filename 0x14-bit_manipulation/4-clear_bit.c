@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* clear - set index bit at 0
+* clear_bit - clear index byte
 * @n: integer base 10
 * @index: index on number
 * Return: return byte
