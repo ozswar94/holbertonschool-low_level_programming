@@ -32,7 +32,6 @@ int main(int argc, char *argv[])
 * @file_to: path of file
 *
 */
-
 void copy_file_to_other(const char *file_from, const char *file_to)
 {
 	int fd_from, fd_to, len;
@@ -61,13 +60,13 @@ void copy_file_to_other(const char *file_from, const char *file_to)
 
 	if (close(fd_from) < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write from file %d\n", fd_from);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 		exit(100);
 	}
 
 	if (close(fd_to) < 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write from file %d\n", fd_to);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
 }
