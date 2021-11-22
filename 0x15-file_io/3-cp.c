@@ -48,9 +48,8 @@ void copy_file_to_other(const char *file_from, const char *file_to)
 		exit(99);
 	}
 
-	while (r)
+	while ((r = read(fd_from, buf, 1024)) != 0)
 	{
-		r = read(fd_from, buf, 1024);
 		if (r == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
