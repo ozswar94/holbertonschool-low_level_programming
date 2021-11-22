@@ -18,7 +18,7 @@ size_t _strlen(char *str)
 }
 
 /**
-*	create_file - creaeate a file and write in file
+* create_file - creaeate a file and write in file
 * @filename: path of file
 * @text_content: the content write on file
 * Return: 1 if success else return -1
@@ -31,8 +31,8 @@ int create_file(const char *filename, char *text_content)
 	if (!filename)
 		return (-1);
 
-	if (access(filename, F_OK) == 0)
-		file = open(filename, O_WRONLY | O_CREAT);
+	if (access(filename, F_OK) >  0)
+		file = open(filename, O_WRONLY);
 	else
 		file = open(filename, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
 
@@ -40,7 +40,8 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 
 	if (filename != NULL)
-		write(file, text_content, _strlen(text_content));
+		if (write(file, text_content, _strlen(text_content)) == -1)
+			return (-1);
 
 	close(file);
 
