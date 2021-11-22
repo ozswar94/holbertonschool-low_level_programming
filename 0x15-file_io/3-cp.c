@@ -6,7 +6,6 @@
 #define SIZE 1024
 
 void copy_file_to_other(const char *file_from, const char *file_to);
-void clean_tab(char *tab);
 
 /**
 * main - main function
@@ -37,8 +36,6 @@ void copy_file_to_other(const char *file_from, const char *file_to)
 	int fd_from, fd_to, r = 1, w = 1;
 	char buf[SIZE];
 
-	clean_tab(buf);
-
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
 	{
@@ -46,7 +43,7 @@ void copy_file_to_other(const char *file_from, const char *file_to)
 		exit(98);
 	}
 
-	fd_to = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
+	fd_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", file_to);
@@ -67,7 +64,6 @@ void copy_file_to_other(const char *file_from, const char *file_to)
 			dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", file_to);
 			exit(99);
 		}
-		clean_tab(buf);
 	}
 
 	if (close(fd_from) == -1)
@@ -87,12 +83,13 @@ void copy_file_to_other(const char *file_from, const char *file_to)
 * clean_tab - clean buffer
 * @tab: string
 *
+*
+*
+*void clean_tab(char *tab)
+*{
+*	int i;
+*
+*	for (i = 0; i < SIZE; i++)
+*		tab[i] = 0;
+*}
 */
-
-void clean_tab(char *tab)
-{
-	int i;
-
-	for (i = 0; i < SIZE; i++)
-		tab[i] = 0;
-}
