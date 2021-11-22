@@ -28,13 +28,10 @@ int create_file(const char *filename, char *text_content)
 {
 	int file;
 
-	if (!filename)
+	if (filename == NULL)
 		return (-1);
 
-	if (access(filename, F_OK) >  0)
-		file = open(filename, O_WRONLY);
-	else
-		file = open(filename, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
+	file = open(filename, O_WRONLY | O_CREAT, 0600);
 
 	if (file == -1)
 		return (-1);
