@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-
-void error_file(char *name, int num_error, int fd);
+#include "main.h"
 
 /**
 * main - main function
