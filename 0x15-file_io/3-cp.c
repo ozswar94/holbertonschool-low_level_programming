@@ -35,14 +35,17 @@ int main(int argc, char *argv[])
 			error_file(argv[2], 99, 0);
 	}
 
-	if (close(fd_from) == -1)
+	r = close(fd_from);
+	if (r == -1)
 		error_file(NULL, 100, fd_from);
 
-	if (close(fd_to) == -1)
+	w = close(fd_to);
+	if (w == -1)
 		error_file(NULL, 100, fd_to);
 
 	return (0);
 }
+
 
 /**
 * error_file - check error file
