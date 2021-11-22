@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 
 void copy_file_to_other(const char *file_from, const char *file_to)
 {
-	int fd_from, fd_to;
+	int fd_from, fd_to, len;
 	char buf[SIZE];
 
 	clean_tab(buf);
@@ -54,9 +54,9 @@ void copy_file_to_other(const char *file_from, const char *file_to)
 		exit(99);
 	}
 
-	while (read(fd_from, buf, SIZE) > 0)
+	while ((len = read(fd_from, buf, SIZE)) > 0)
 	{
-		write(fd_to, buf, SIZE);
+		write(fd_to, buf, len);
 	}
 
 	if (close(fd_from) < 0)
