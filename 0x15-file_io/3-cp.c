@@ -3,8 +3,6 @@
 #include <stdio.h>
 #include <unistd.h>
 
-#define SIZE 1024
-
 void copy_file_to_other(const char *file_from, const char *file_to);
 
 /**
@@ -34,7 +32,7 @@ int main(int argc, char *argv[])
 void copy_file_to_other(const char *file_from, const char *file_to)
 {
 	int fd_from, fd_to, r = 1, w = 1;
-	char buf[SIZE];
+	char buf[1024];
 
 	fd_from = open(file_from, O_RDONLY);
 	if (fd_from == -1)
@@ -52,7 +50,7 @@ void copy_file_to_other(const char *file_from, const char *file_to)
 
 	while (r)
 	{
-		r = read(fd_from, buf, SIZE);
+		r = read(fd_from, buf, 1024);
 		if (r == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
@@ -78,18 +76,3 @@ void copy_file_to_other(const char *file_from, const char *file_to)
 		exit(100);
 	}
 }
-
-/**
-* clean_tab - clean buffer
-* @tab: string
-*
-*
-*
-*void clean_tab(char *tab)
-*{
-*	int i;
-*
-*	for (i = 0; i < SIZE; i++)
-*		tab[i] = 0;
-*}
-*/
