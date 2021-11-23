@@ -67,7 +67,7 @@ void error_file(char *name, int num_error, int fd)
 			exit(98);
 			break;
 		case 99:
-			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", name);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", name);
 			exit(99);
 			break;
 		case 100:
