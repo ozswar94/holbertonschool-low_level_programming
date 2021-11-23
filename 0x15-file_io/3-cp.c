@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 * error_file - check error file
 * @name: path of file
 * @num_error: path of file
-* @fd:
+* @fd: file descriptor
 *
 */
 void error_file(char *name, int num_error, int fd)
@@ -67,7 +67,7 @@ void error_file(char *name, int num_error, int fd)
 			exit(98);
 			break;
 		case 99:
-			dprintf(STDERR_FILENO, "Error: Can't write from file %s\n", name);
+			dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", name);
 			exit(99);
 			break;
 		case 100:
