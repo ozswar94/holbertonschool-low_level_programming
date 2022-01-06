@@ -4,7 +4,6 @@
 /**
 * free_dlistint - free list
 * @head: head of list
-* @n: n in list
 *
 */
 
