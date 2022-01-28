@@ -14,6 +14,9 @@ void hash_table_print(const hash_table_t *ht)
 	unsigned long int i;
 	int len = 0;
 
+	if (ht == NULL)
+		return;
+
 	for (i = 0; i < ht->size; i++)
 	{
 		tmp = ht->array[i];
