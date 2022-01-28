@@ -7,7 +7,7 @@
 * @ht: hash table
 * @key: key of node
 * @value: value of node
-* Return: 1 if it succeeded, 0 otherwise
+* Return: 1 if it succeeded, 0 otherwises
 */
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
@@ -25,7 +25,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (key == NULL)
 		return (0);
 	new->key = strdup(key);
-	new->value = strdup(value);
+	if (value == NULL)
+		new->value = strdup("(null)");
+	else
+		new->value = strdup(value);
 	new->next = NULL;
 
 	index = key_index((const unsigned char *)key, ht->size);
