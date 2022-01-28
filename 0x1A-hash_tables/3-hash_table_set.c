@@ -24,21 +24,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	if (key == NULL)
 		return (0);
-	else
-		new->key = strdup(key);
-	if (value == NULL)
-		new->value = NULL;
-	else
-		new->value = strdup(value);
+	new->key = strdup(key);
+	new->value = strdup(value);
 	new->next = NULL;
 
 	index = key_index((const unsigned char *)key, ht->size);
-
-	if (ht->array[index] == NULL)
-	{
-		ht->array[index] = new;
-		return (1);
-	}
 
 	new->next = ht->array[index];
 	ht->array[index] = new;
