@@ -1,4 +1,3 @@
-
 void school(void);
 
 int main(void)
